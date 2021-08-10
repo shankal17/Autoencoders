@@ -4,6 +4,20 @@ import torch.nn.functional as F
 
 
 class SymmetricFCAutoencoder(nn.Module):
+    """Fully-Connected autoencoder with mirrored encoder and decoder
+    ...
+    
+    Attributes
+    ----------
+    layer_sizes : iterable
+        Iterable of the layer sizes of encoder section
+    
+    Methods
+    -------
+    forward(x)
+        Forward pass of x
+    """
+
     def __init__(self, layer_sizes):
         super(SymmetricFCAutoencoder, self).__init__()
         sizes_len = len(layer_sizes)
@@ -19,6 +33,24 @@ class SymmetricFCAutoencoder(nn.Module):
         return out
 
 class LinearWithReLU(nn.Module):
+    """Bundle of linear layer followed by ReLu activation
+    ...
+    
+    Attributes
+    ----------
+    in_features : int
+        Number of input features in the linear layer
+    out_features : int
+        Number of output features in the linear layer
+    bias : bool, optional
+        Is bias included in the linear layer
+    
+    Methods
+    -------
+    forward(x)
+        Forward pass of x
+    """
+    
     def __init__(self, in_features, out_features, bias=True):
         super(LinearWithReLU, self).__init__()
         self.layers = nn.Sequential(nn.Linear(in_features, out_features),
@@ -29,6 +61,15 @@ class LinearWithReLU(nn.Module):
         return out
 
 class ConvAutoencoder(nn.Module):
+    """Simple convolutional autoencoder
+    ...
+    
+    Methods
+    -------
+    forward(x)
+        Forward pass of x
+    """
+
     def __init__(self):
         super(ConvAutoencoder, self).__init__()
 
