@@ -4,9 +4,15 @@ Exercises with autoencoders. Both fully-connected and fully-convolutional autoen
 
 ## Results
 ### Denoising Autoencoder Result
+
+The top row is comprised of the input images with gaussian noise added. The bottom row are the corresponding outputs of the autoencoder. Note that most of the noise is removed.
+
 ![denoising](/results/denoising_autoencoder_result.PNG)
 
 ### Normal Autoencoder Result
+
+The top row is comprised of the input images that are passed into the autoencoder. The bottom row are the corresponding outputs of the autoencoder. Notice that they look very similar to the inputs. This is what we want.
+
 ![normal](/results/convolutional_autoencoder_result.PNG)
 
 ## Usage
